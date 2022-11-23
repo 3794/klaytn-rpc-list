@@ -63,7 +63,7 @@ const useHttpQuery = (url: string) => {
   return {
     queryKey: [url],
     queryFn: () => fetchChain(url),
-    refetchInterval: 10000,
+    refetchInterval: 5000,
     select: useCallback((data) => formatData(url, data), [])
   }
 }

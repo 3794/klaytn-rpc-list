@@ -91,14 +91,14 @@ function RPC () {
 }
 
 function Row ({ values }: any) {
-  const { data } = values
+  const { data, isLoading } = values
 
   return (
     <>
       <div><div className="md:border-b-2">{data?.url}</div></div>
       <div className="grid grid-cols-[5em_1fr] md:block before:content-[attr(data-name)] md:before:content-none md:text-center md:border-b-2" data-name="Height">{data?.height}</div>
       <div className="grid grid-cols-[5em_1fr] md:block before:content-[attr(data-name)] md:before:content-none md:text-center md:border-b-2" data-name="Latency">{data?.latency}</div>
-      <div className="grid grid-cols-[5em_1fr] md:flex md:justify-center before:content-[attr(data-name)] md:before:content-none border-b-2" data-name="Score"><Circle fill={data?.trust}/></div>
+      <div className="grid grid-cols-[5em_1fr] md:flex md:justify-center before:content-[attr(data-name)] md:before:content-none border-b-2" data-name="Score">{isLoading ? null : <Circle fill={data?.trust}/>}</div>
     </>
   )
 }
