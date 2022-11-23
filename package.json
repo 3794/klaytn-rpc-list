@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc-silent -p './tsconfig.json' --suppress @ && vite build",
+    "build": "tsc-silent -p './tsconfig.json' --suppress @ && vite build && rm -rf docs && mv dist docs",
     "preview": "vite preview"
   },
   "dependencies": {
